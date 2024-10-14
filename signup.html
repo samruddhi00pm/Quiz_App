@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assest/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <section class="signup">
+        <img src="assest/signup.png" alt="char" class="char2">
+        <div class="div_login">
+            <div class="head">
+            <h1 class="heading">Signup</h1>
+            
+            <p class="para1">Sign Up to join</p>
+            </div>
+            <form onsubmit="return false">
+                <div class="fs-div">
+                    <label for="name">Full Name<span class="astrik">*</span></label>
+                    <input type="text" placeholder="Full Name" class="name input" id="name">
+                    <span id="name_err" style="color: red;"></span>
+                </div>
+                <div class="sc-div">
+                    <label for="email">Email Id <span class="astrik">*</span></label>
+                    <input type="text" placeholder="xyz12@gmail.com" class="email input" id="email">
+                    <span id="email_span" style="color: red;"></span>
+                </div>
+                <div class="td-div">
+                    <label for="">Password <span class="astrik">*</span></label>
+                    <input type="password" placeholder="password" class="password input" id="pass">
+                    <span id="pass_span" style="color: red;"></span>
+                </div>
+                <button  onclick="validation()" class="btn-login">Login</button>
+                
+                <button class="btn-google"><img src="assest/google.png" class="gimg" alt="">Sign up with Google</button>
+                <p class="para3"><input type="checkbox">&nbsp;I accept <span class="terms">&nbsp;Terms & Conditions</span></p>
+                <p class="para2">Have an account? <a href="login.html">Log in ?</a></p>
+
+            </form>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html> 
