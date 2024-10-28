@@ -20,9 +20,10 @@
                 <img src="assest/techpathshala.png" alt="" class="main-img">
             </div>
             <div class="sc-div">
-                <a href="#">Edit Quizzes</a>
-                <a href="#">All Quizzes</a>
-                <img src="assest/lady_logo.png" alt="">
+                <a href="#">Home</a>
+                <div id="userNameDisplay"></div>
+                <div id="">logout</div>
+                
             </div>
 
         </nav>
@@ -38,22 +39,10 @@
                 <p class="para1">Catchy Line for Starting Quiz</p>
                 <p class="para2">When you’re done, review your answers and See your rank.</p>
 
-                <div class="form">
-                    <div class="fs2-div">
-                        <label for="name">Full Name <span class="astrik">*</span></label>
-                        <input type="text" placeholder="Full Name">
-                    </div>
-                    <div class="sc2-div">
-                        <label for="name">Email<span class="astrik">*</span></label>
-                        <input type="text" placeholder="Email">
-                    </div>
-                    <div class="td2-div">
-                        <label for="name">Contact No<span class="astrik">*</span></label>
-                        <input type="text" placeholder="Contact No">
-                    </div>
-                   
-                </div>
-                <button class="btn-start">Start Quiz</button>
+                
+                <div class=" start-btn-div dis-row-center">               
+                    <a href="question.html"><button class="btn btn-primary" type="submit" onsubmit="appendQuestion(quizQuestions)">Start Quiz</button></a>
+                   </div>
             </div>
         </main>
     </section>

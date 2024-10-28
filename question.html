@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assest/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="quiz-start dist-row">
+        <div class="logo">
+            <a href="quiz.html"></a>
+            <img src="assest/techpathshala.png" alt="techpathshala">
+        </div>
+        <div class="user-info">
+            <span><a href="quiz.html">Home</a></span>
+            <span id="userName" class="user-name"></span>
+            <span class="logout-btn" onclick="logout()">Logout</span>
+        </div>
+    </nav>
+
+    <div class="ques-container">
+        <div id="questionHead"></div>
+        <br>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <br>
+
+        <div class="display-que">
+            <div class="question-head">
+                <h2 id="questionNum"></h2>
+                <h2 id="question"></h2>
+            </div>
+            <br>
+            <div id="options">
+                <!-- question display -->
+                <input type="radio" name="" id="">
+            </div>
+
+            <div class="display-btn">
+            <button id="previousquestion" onclick="previousQuestion()"></button>
+            <button id="nextquestion" onclick="nextQuestion()"></button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

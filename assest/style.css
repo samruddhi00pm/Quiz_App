@@ -417,7 +417,8 @@
     background-color: #F5F5F5;
 }
 
-.dashboard .navbar {
+ .dashboard .navbar, .quiz-start {
+    width: 100%;
     height: 4rem;
     display: flex;
     justify-content: space-between;
@@ -426,7 +427,7 @@
     background-color: #F5F5F5;
 }
 
-.dashboard .navbar .sc-div {
+.dashboard .navbar .sc-div,.user-info {
     width: 30%;
     margin-right: 1.5rem;
     /* border: 1px solid black; */
@@ -441,7 +442,7 @@
     text-decoration: none;
 }
 
-.dashboard .navbar .fs-div {
+.dashboard .navbar .fs-div,.logo  {
     width: 30%;
     display: flex;
     /* border: 1px solid black; */
@@ -579,768 +580,77 @@
 }
 
 /* Dashboard ends */
+#questionNum,#question{
+    display: inline;
+}
 
-/* question 1 start */
-.q1{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q1 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q1 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q1 .que-div .para1{
-    font-size: 3.8125rem;
+.ques-container #questionHead{
+    font-size:1.2rem;
+   margin-top: 1rem;
+   margin-left:2rem;
     font-weight: 600;
-    line-height: 4.56rem;
-}
-.q1 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q1 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 10%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q1 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q1 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q1 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q1 .footer{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-    
-}
-.q1 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-    margin-left: 75%;
-}
-/* question 1 ends */
 
-/* question 2 start */
-.q2{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q2 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q2 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q2 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q2 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q2 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 20%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q2 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q2 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q2 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q2 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q2 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 2 end */
-
-/* question 3 start */
-.q3{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q3 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q3 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q3 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q3 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q3 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 30%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q3 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q3 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q3 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q3 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q3 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* quasteion 3 ends*/
-
-/* question 4 start */
-.q4{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q4 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q4 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q4 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q4 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q4 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 40%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q4 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q4 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q4 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q4 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q4 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 4 ends */
-
-/* question 5 start */
-.q5{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q5 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q5 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q5 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q5 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q5 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 50%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q5 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q5 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q5 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q5 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q5 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
 }
 
-/* question 5 end */
-
-/* question 6 start */
-.q6{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q6 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q6 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q6 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q6 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q6 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 60%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q6 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q6 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q6 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q6 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q6 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 6 end */
-
-/* question 7 start */
-.q7{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q7 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q7 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q7 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q7 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q7 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 70%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q7 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q7 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q7 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q7 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q7 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 7 end */
-
-/* question 8 start */
-.q8{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q8 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q8 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q8 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q8 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q8 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 80%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q8 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q8 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q8 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q8 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q8 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 8 end */
-
-/* question 9 start */
-.q9{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
-}
-.q9 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q9 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q9 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q9 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q9 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
+.progress-bar {
     width: 90%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 2rem;
 }
-.q9 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q9 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q9 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q9 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q9 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 9 end */
 
+.progress {
+    width: 20%;
+    height: 100%;
+    background-color: #F3BD00;
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
 
-/* question 10 end */
-.q10{
-    /* width: 100%; */
-    height: 99.5vh;
-    border: 1px solid black;
-    background-color: #F5F5F5;
+.display-que{
+    /* margin-top: 2rem; */
+    margin-left: 2rem;
 }
-.q10 .navbar{
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #CBCBCB;
-    background-color: #F5F5F5;
-    padding-left: 5rem;
-    padding-right:5rem;
-}
-.q10 .que-div{
-    width: 95%;
-    margin: 0 auto;
-    /* border: 1px solid black; */
-}
-.q10 .que-div .para1{
-    font-size: 3.8125rem;
-    font-weight: 600;
-    line-height: 4.56rem;
-}
-.q10 .que-div .progress-bar{
-    width: 98%;
-    margin: 0 auto;
-    border: 1px solid #EBEBF0;
-    border-radius:43px ;
-    background-color: #EBEBF0;
-    margin-top: 1rem;
-    /* padding: 0.5rem; */
-}
-.q10 .que-div .progress-bar .progress{
-    background-color:#F3BD00;
-    width: 100%;
-    border: 1px solid #F3BD00;
-    border-radius: 16px;
-    padding: 0.5rem;
-    
-}
-.q10 .que-div .para2{
-font-size: 2.5rem;
-font-weight: 700;
-line-height: 5rem;
-}
-.q10 .que-div .list{
-    width:95%;
-    height: 14.25rem;
-    /* border: 1px solid black; */
-}
-.q10 .que-div .list li{
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    list-style: none;
-}
-.q10 .footer{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid black; */
-    
-}
-.q10 .footer a{
-    text-decoration: none;
-    color:#0948B4;
-    font-size: 1.8rem;
-   
-}
-/* question 10 end */
 
+.optionText{
+margin: 16px;
+}
 
+.optionText input[type="radio"]{
+    display: none;
+    position: fixed;
+
+}
+
+.optionText label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.optionText label:hover{
+    box-shadow:2px 2px 2px 2px rgb(192, 189,189);
+    width:400px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.optionText input[name="options"]:checked+label{
+    background-color: #E8BE21;
+    border-color: #E8BE21;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.selected-option{
+    background-color: #E8BE21;
+    width: 400px;
+    border-radius: 20px;
+}
 
 /* winner page start */
 .winner{
@@ -1358,5 +668,15 @@ line-height: 5rem;
     background-color: #F5F5F5;
     padding-left: 5rem;
     padding-right:5rem;
+}
+
+.start-btn-div .btn{
+    background-color: #F3BD00;
+    border: 1px solid #F3BD00;
+    border-radius: 100px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    text-align: center;
 }
 /* winner page end */

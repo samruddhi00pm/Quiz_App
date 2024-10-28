@@ -20,7 +20,7 @@
             
             <p class="para1">Please enter your details below.</p>
             </div>
-            <form onsubmit="return loginValidation()">
+            <form onsubmit="return false">
                 <div class="fs-div">
                     <label for="email">Email Id <span class="astrik">*</span></label>
                     <input type="text" placeholder="xyz12@gmail.com" class="email input" id="email_login">
@@ -31,9 +31,9 @@
                     <input type="password" placeholder="password" class="password input" id="pass_login">
                     <span id="pass_login_err" style="color: red;"></span>
                 </div>
-                <button class="btn-login">Login</button>
+                <button class="btn-login" onclick="loginValidation()">Login</button>
                 
-                <button class="btn-google"><img src="assest/google.png" class="gimg" alt="">Sign up with Google</button>
+                <button class="btn-google" ><img src="assest/google.png" class="gimg" alt="">Sign up with Google</button>
                 <p class="para2">Don't have an accout? <a href="signup.html">sign up?</a> </p>
 
             </form>
@@ -43,7 +43,7 @@
     <section class="sign up">
 
     </section>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
