@@ -110,7 +110,7 @@ function loginValidation() {
         localStorage.setItem("isLoggedin", JSON.stringify(user));
         console.log(user)
         window.location.href = "dashboard.html";
-        // window.location.href = "quiz.html";
+
     } else {
         console.log("false")
         alert("Invalid email or password");
@@ -121,7 +121,62 @@ function loginValidation() {
 let userLogedIn = (localStorage.getItem('isLoggedin'));
 let testUser = (JSON.parse(userLogedIn));
 
+// console.log(testUser);
+// console.log(testUser.fullname);
 
+function getUserInitials() {
+    const names = testUser.fullname.split(' ');
+    // console.log(names);
+    if (names.length >= 2) {
+        return names[0][0].toUpperCase() + names[1][0].toUpperCase(); // Initials of first and last name
+    } else {
+        return names[0][0].toUpperCase(); // Initial if only one name
+    }
+}
+
+// Function to display the user's name or initials near the logo
+function displayUserName() {
+    if (testUser.fullname) {
+        const userNameElement =document.getElementById("userName");
+        const initials = getUserInitials(testUser.fullname);
+        userNameElement.innerHTML = `Welcome, ${initials}`
+        // userNameElement.innerHTML = `Welcome, ${testUser.fullName.toUpperCase()}`
+    }
+}
+displayUserName();
+
+// function to handle logout Alert
+let logoutDiv = document.getElementById("confirmLogoutOptionDiv");
+let flag = 0;
+
+function confirmLogout() {
+    if (flag == 1) {
+        logoutDiv.style.display = "none";
+        // document.querySelector(".user-info").style.flexDirection = "column";
+        flag = 0;
+    }
+    else {
+        logoutDiv.style.display = "block";
+        document.getElementById("userNameDisplay").innerHTML = `Hii ${testUser.fullname}`;
+        document.getElementById("userEmailDisplay").innerHTML = testUser.email;
+        flag = 1;
+    }
+}
+
+// Function to handle logout
+function logout() {
+    localStorage.removeItem("isLoggedin"); // Optionally remove login status
+    window.location.href = "login.html"; // Redirect to login page
+}
+
+// Function to take image input
+let editOption = document.getElementsByClassName("edit-button")
+let AvatarPic = document.getElementById("AvatarPic")
+function editPic() {
+    console.log(editOption, AvatarPic)
+    //    personalAccount = document.querySelector(".account-img");
+
+}
 // const userNameElement =document.getElementById("userNameDisplay")
 //         userNameElement.innerHTML =`Welcome samruddhi`
 
@@ -135,78 +190,169 @@ let testUser = (JSON.parse(userLogedIn));
 // }
 // displayUserInfo()
 
+
+
 // question storing
-let questionList = [
+let quizQuestions = [
     {
-        // first question
-        ques: "what is number of Rajya Sabha seats from Maharastra?",
-        options: ["17", "18", "19", "20"],
-        correct_ans: "19",
+        question: "How many letters are there in the English alphabet?",
+        options: [
+            { value: "24" },
+            { value: "18" },
+            { value: "27" },
+            { value: "26" },
+        ],
+        rightAns: "26"
     },
     {
-        //    second question
-        ques: "A number of Parlimentary Constituencies in Maharastra?",
-        options: ["42", "48", "36", "50"],
-        correct_ans: "48",
+        question: "Rainbow consist of how many colours?",
+        options: [
+            { value: "10" },
+            { value: "12" },
+            { value: "7" },
+            { value: "13" },
+        ],
+        rightAns: "7"
     },
     {
-        // third question
-        ques: "Sub capital of the Maharastra state is",
-        options: ["Aurangabad", "Nagpur", "Mumbai", "pune"],
-        correct_ans: "Nagpur",
+        question: "How many minutes are there in an hour?",
+        options: [
+            { value: "60 min" },
+            { value: "60 sec" },
+            { value: "50 min" },
+            { value: "57 min" },
+        ],
+        rightAns: "60 min"
     },
     {
-        // four question
-        ques: "The most important river of Maharastra which is a lifeline of the whole South Maharatra is",
-        options: ["Koyana", "Krishna", "Warna", "Wardha"],
-        correct_ans: "Krishna",
+        question: "Baby frog is known as.......",
+        options: [
+            { value: "Tadpolee" },
+            { value: "taddy" },
+            { value: "Tadpole" },
+            { value: "pole" }
+        ],
+        rightAns: "Tadpole"
     },
     {
-        // fifth question
-        ques: "Total population of Maharastra According to 2011 Census",
-        options: ["55,27,92,925", "90,23,72,935", "11,22,52,972", "11,23,72,972"],
-        correct_ans: "11,23,72,972",
+        question: "Name the National animal of India?",
+        options: [
+            { value: "Lion" },
+            { value: "Tiger" },
+            { value: "Rabbit" },
+            { value: "Jiraf" },
+        ],
+        rightAns: "Tiger"
     },
     {
-        // sixth question
-        ques: "What is area rank According to 2011?",
-        options: ["5th", "4th", "3rd", "6th"],
-        correct_ans: "c",
+        question: "Name the national flower of India?",
+        options: [
+            { value: "Rose" },
+            { value: "Tulip" },
+            { value: "Lotus" },
+            { value: "Lily" },
+        ],
+        rightAns: "Lotus"
     },
     {
-        // seven question
-        ques: "How many Tehsils are there in Mahrastra?",
-        options: ["958", "540", "358", "670"],
-        correct_ans: "11,23,72,972",
+        question: "Name the National river of India?",
+        options: [
+            { value: "Ganga" },
+            { value: "Savitri" },
+            { value: "Godavari" },
+            { value: "Yamuna" },
+        ],
+        rightAns: "Ganga"
     },
     {
-        // eight question
-        ques: "What is capital of Maharastra",
-        options: ["Mumbai", "Nagpur", "Both A and B", "None of thease"],
-        correct_ans: "Mumbai",
+        question: "Which is the smallest month of the year?",
+        options: [
+            { value: "March" },
+            { value: "December" },
+            { value: "April" },
+            { value: "February" },
+        ],
+        rightAns: "February"
     },
     {
-        // ninth question
-        ques: "What is second largest city of Maharastra",
-        options: ["Nagpur", "pune", "Both A and B", "None of thease"],
-        correct_ans: "pune",
+        question: "How many sides are there in a triangle?",
+        options: [
+            { value: "3" },
+            { value: "6" },
+            { value: "2" },
+            { value: "2.5" },
+        ],
+        rightAns: "3"
     },
     {
-        // tenth question
-        ques: "Who is know as the spiritual guru of shivaji",
-        options: ["Guru Kumbhar", "Ramdas swami", "Eknath", "Tukaram"],
-        correct_ans: "Ramdas swami",
+        question: "Anti-clockwise is it from left or right?",
+        options: [
+            { value: "Left" },
+            { value: "Right" },
+            { value: "Left-Right" },
+            { value: "None of these" },
+        ],
+        rightAns: "Left"
+    },
+    {
+        question: "Name the hardest substance available on Earth?",
+        options: [
+            { value: "Diamond" },
+            { value: "Zinc" },
+            { value: "Bronze" },
+            { value: "Star" },
+        ],
+        rightAns: "Diamond"
+    },
+    {
+        question: "What is the main ingredient in chocolate?",
+        options: [
+            { value: "Choco" },
+            { value: "Cocoa" },
+            { value: "Cherry" },
+            { value: "Rice ball" },
+        ],
+        rightAns: "Cocoa"
+    },
+    {
+        question: "What do bees produce?",
+        options: [
+            { value: "Honey" },
+            { value: "Beans" },
+            { value: "eggs" },
+            { value: "Mango" },
+        ],
+        rightAns: "Honey"
+    },
+    {
+        question: " Which festival is known as the festival of light?",
+        options: [
+            { value: "Diwali" },
+            { value: "Ganeshustov" },
+            { value: "Chrismas" },
+            { value: "Navratri" },
+        ],
+        rightAns: "Diwali"
+    },
+    {
+        question: "Name the National tree of India?",
+        options: [
+            { value: "Banana Tree" },
+            { value: "Banyan Tree" },
+            { value: "Mango Tree" },
+            { value: "Coconut Tree" },
+        ],
+        rightAns: "Banyan Tree"
     }
+];
 
-]
-
-localStorage.setItem("questionList", questionList);
+localStorage.setItem("quizQuestions", JSON.stringify(quizQuestions));
 
 let score = 0;
 let questionNumber = 1;
-let quizIndex = new Set();
+let quizUsedIndexes = new Set();
 let randomQuestion = [];
-let totalQuestion = 10;
+let totalQuestions = 10;
 let index = 0;
 let selectedAnswers = [];
 const progressBarElement = document.getElementById("progress");
@@ -218,86 +364,97 @@ const nextButton = document.getElementById("nextquestion");
 const previousButton = document.getElementById("previousquestion");
 const displayScore = document.getElementById("displayScore");
 
-const fetchQuize = (localStorage.getItem("questionList"));
+// Fetch the quiz questions from localStorage
+const fetchQuize = (localStorage.getItem("quizQuestions"));
 
-function RandomIndex() {
+//  function to get a random index that's not repeated
+function getRandomIndex() {
     let randomIndex;
     do {
-        randomIndex = Math.floor(Math.random() * questionList.length);
+        randomIndex = Math.floor(Math.random() * quizQuestions.length);
+    } while (quizUsedIndexes.has(randomIndex));
+    quizUsedIndexes.add(randomIndex);
+    return randomIndex;
+}
 
-    } while (quizIndex.has(randomIndex));
-    quizIndex.add(randomIndex);
-    return randomIndex
+// Populate randomQuestion with unique questions
+for (let i = 0; i < totalQuestions; i++) {
+    const randomIndex = getRandomIndex();
+    randomQuestion.push(quizQuestions[randomIndex]);
 }
-// itrate random question
-for (let i = 0; i < totalQuestion; i++) {
-    const randomIndex = RandomIndex();
-    randomQuestion.push(questionList[randomIndex]);
-}
-// display questions
+
+// Function to display a question
 function displayQuestion() {
     if (questionElement && optionElement) {
         let currentQuestion = randomQuestion[index];
-        console.log(currentQuestion)
-        questionHeading.innerHTML = `<h1> Question ${questionNumber} of ${totalQuestion}</h1>`;
+
+        // question heading and question content
+        questionHeading.innerHTML = `<h1>Question ${questionNumber} of ${totalQuestions}</h1>`;
         questionNumberElement.innerHTML = `${index + 1}.`;
-        questionElement.innerHTML = currentQuestion.ques;
+        questionElement.innerHTML = currentQuestion.question;
 
-        // display option
-        optionElement.innerHTML = currentQuestion.options.map((option, index) =>
-            `<div class ="optionText">
-        ${index + 1}.
-        <input type="radio" name="options" id="option ${index}" value="${option}">
-        <label for="option${index}">${option}</label>
-        </div>`).join("");
+        // Display 4 options..
+        optionElement.innerHTML = currentQuestion.options.map((option, optionIndex) =>
+            `<div class="optionText">
+                <input type="radio" name="options" id="option${optionIndex}" value="${option.value}">
+                <label for="option${optionIndex}">${optionIndex + 1}. ${option.value}</label>
+            </div>`).join("");
 
-        if (index == 0) {
-            previousButton.style.display = "none"
-        }
+        // Attach event listeners for option selection
+        attachOptionSelector();
 
+        // Show previously selected answer if available
+        showSelectedAnswer();
+
+        // Handle Next/Previous buttons display..
         if (index > 0) {
-            previousButton.style.display = "inline"
-            nextButton.innerHTML = "Next <i class='fa-solid fa-arrow-right'></i>"
+            previousButton.innerHTML = "<i class='fa-solid fa-arrow-left'></i> Previous";
         }
-
-        if (index == 8) {
-            questionHeading.innerHTML = "<h1>Last 2 questions left...</h1>"
+        if (index === 8) {
+            questionHeading.innerHTML = "<h1>Last 2 Questions Left..</h1>";
         }
-
-        if (index == 9) {
-            questionHeading.innerHTML = "<h1>Hey this is the last question</h1>"
-            nextButton.innerHTML = "Submit and Continue"
+        if (index === 9) {
+            questionHeading.innerHTML = "<h1>Hey, this is the Last Question</h1>";
         }
-        nextButton.innerHTML = index === totalQuestion - 1
-            ? "submit and continue <i class='fa-solid fa-arrow-right'></i>"
+        nextButton.innerHTML = index === totalQuestions - 1
+            ? "Submit and Continue <i class='fa-solid fa-arrow-right'></i>"
             : "Next <i class='fa-solid fa-arrow-right'></i>";
     }
     updateProgressBar();
 }
 
+// Function to update the progress bar
 function updateProgressBar() {
-    const progress = ((index + 1) / totalQuestion) * 100;
+    const progress = ((index + 1) / totalQuestions) * 100;
     if (progressBarElement) {
         progressBarElement.style.width = `${progress}%`;
     }
 }
 
+// Function to attach listeners to the options
 function attachOptionSelector() {
-    const options = document.querySelectorAll('input[name="option"]');
-    options.foreach(option => {
-        option.addEventlistener('change', (event) => {
-            const selectedDiv = event.target.closest(' .optionText');
+    const options = document.querySelectorAll('input[name="options"]');
+    options.forEach(option => {
+        option.addEventListener('change', (event) => {
+            const selectedDiv = event.target.closest('.optionText');
+            // Remove selected-option class from all options
             const allOptions = document.querySelectorAll('.optionText');
             allOptions.forEach(opt => opt.classList.remove('selected-option'));
 
+            // Add selected-option class to the selected one
             selectedDiv.classList.add('selected-option');
 
+            // Store the selected answer
             randomQuestion[index].choosedAnswer = event.target.value;
+
+            // Save selected answer for this question
+            selectedAnswers[index] = event.target.value;
 
         });
     });
 }
 
+// Function to show the previously selected answer
 function showSelectedAnswer() {
     const previousAnswer = selectedAnswers[index];
     if (previousAnswer) {
@@ -309,11 +466,10 @@ function showSelectedAnswer() {
     }
 }
 
+// Function to move to the next question
 function nextQuestion() {
     const selectedOption = document.querySelector('input[name="options"]:checked');
-    // randomQuestion[index].choosedAnswer = selectedOption.value;
 
-    console.log(selectedOption);
     if (!selectedOption) {
         alert("Please select an option.");
         return;
@@ -323,7 +479,7 @@ function nextQuestion() {
     randomQuestion[index].choosedAnswer = selectedOption.value;
 
     // Move to the next question or submit the quiz
-    if (index < totalQuestion - 1) {
+    if (index < totalQuestions - 1) {
         index++;
         questionNumber++;
         displayQuestion();
@@ -349,41 +505,41 @@ function previousQuestion() {
     }
 }
 
-function submitQuiz(){
+function submitQuiz() {
     let confirmAlert = confirm("Are you sure want to submit the quiz?");
-    if(confirmAlert) {
+    if (confirmAlert) {
         updateScore();
 
-        const userScore ={
-            testUserName:testUser.fullname,
-            testUserEmail:testUser.email,
-            score:score,
-            selectedQuiz:[randomQuestion],
+        const userScore = {
+            testUserName: testUser.fullname,
+            testUserEmail: testUser.email,
+            score: score,
+            selectedQuiz: [randomQuestion],
         };
 
-        let storedScores =  JSON.parse(localStorage.getItem('userScores')) || [];
+        let storedScores = JSON.parse(localStorage.getItem('userScores')) || [];
         storedScores.push(userScore);
 
-        localStorage.setItem('userScores',JSON.stringify(storedScores));
+        localStorage.setItem('userScores', JSON.stringify(storedScores));
         console.log(score)
-        window.location.href = "leaderboard.html";
+        window.location.href = "winner_page.html";
     }
 }
 
-function showLeaderboard(){
-    let userScores = JSON.parse(localStorage.getItem('userScores'))||[];
-    let sortedUsers = userScores.sort((a,b) =>b.scores -a.score).slice(0,6);
+function showLeaderboard() {
+    let userScores = JSON.parse(localStorage.getItem('userScores')) || [];
+    let sortedUsers = userScores.sort((a, b) => b.score - a.score).slice(0, 6);
 
-    sortedUsers.forEach((user,index)=> {
-    document.getElementById(`top${index + 1}Name`).innerHTML = user.testUserName;
-    document.getElementById(`top${index + 1}Name`).innerHTML = user.testUserName;
-    console.log(user.testUserName)
+    sortedUsers.forEach((user, index) => {
+        document.getElementById(`top${index + 1}Name`).innerHTML = user.testUserName;
+        document.getElementById(`top${index + 1}Score`).innerHTML = user.score;
+        console.log(user.testUserName)
     });
 }
 
-function rankDisplay(){
+function rankDisplay() {
     let userScores = JSON.parse(localStorage.getItem('userScores')) || [];
-    let sortedUsers =userScores.sort((a,b) => b.score -a.score)
+    let sortedUsers = userScores.sort((a, b) => b.score - a.score)
     let currentUserName = JSON.parse(localStorage.getItem('isLoggedin')).fullname;
     let currentUser = sortedUsers.find(user => user.testUserName === currentUserName);
 
@@ -392,17 +548,17 @@ function rankDisplay(){
 
         // condition for 1st, 2nd, 3rd display
         if (userRank == 1) {
-            document.getElementById("currentscore").style.display = "none"
+            document.getElementById("currentscore").style.display = "none";
 
             document.getElementById("rankDisplay").innerHTML = `Wow Your Rank is: ${userRank}st`;
         }
         else if (userRank == 2) {
-            document.getElementById("currentscore").style.display = "none"
+            document.getElementById("currentscore").style.display = "none";
 
             document.getElementById("rankDisplay").innerHTML = ` Wow Your Rank is: ${userRank}nd`;
         }
         else if (userRank == 3) {
-            document.getElementById("currentscore").style.display = "none"
+            document.getElementById("currentscore").style.display = "none";
 
             document.getElementById("rankDisplay").innerHTML = `Wow Your Rank is: ${userRank}rd`;
         }

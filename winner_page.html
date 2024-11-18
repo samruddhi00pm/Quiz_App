@@ -13,22 +13,120 @@
 
 <body>
     <section class="winner">
-    <nav class="navbar">
-        <div class="fs-div">
-            <img src="assest/techpathshala.png" alt="" class="main-img">
-        </div>
-        <div class="sc-div">
-            <img src="assest/lady_logo.png" alt="">
-        </div>
-    </nav>
-    <main class="rank">
-        <p>Your Score</p>
-        <div class="rank-num">
-           
+        <nav class="quiz-start-nav dis-row-between">
+            <div>
+                <img src="assest/techpathshala.png" alt="" class="main-img">
+            </div>
+            <div class="user-info">
+                <span id="userName" class="user-name"></span>
+                <img class="Avatar" src="assest/Avatar.png" alt="" onclick="confirmLogout()">
+            <br>
+            <div id="confirmLogoutOptionDiv">
+                <div class="confirm dis-col-center">
+                    <span id="userNameDisplay"></span>
+                    <span id="userEmailDisplay"></span>
+                    <button class="logout-button btn-primary" onclick="logout()">Logout</button> 
+                    <button class="edit-button btn-primary" onclick="editPic()"> Edit </button>
+                </div>
+            </div>
         </div>
 
-    </main>
-</section>
+        </nav>
+    </section>
+    <!-- <header>
+        <nav class="quiz-start-nav dis-row-between">
+            <div><img src="assest/techpathshala.png" alt="logo"></div>
+            <div class="user-info">
+                <div>
+                    <span><a class="home" href="quiz.html">Home</a></span>
+                    <span id="userName" class="user-name"></span>
+                    <img class="Avatar" src="assest/lady_logo.png" alt="" onclick="confirmLogout()">
+                </div>
+                <br>
+                <div id="confirmLogoutOptionDiv">
+                    <div class="confirm dis-col-center">
+                        <span id="userNameDisplay"></span>
+                        <span id="userEmailDisplay"></span>
+                        <button class="logout-button btn-primary" onclick="logout()">Logout</button>
+                        <button class="edit-button btn-primary" onclick="editPic()"> Edit </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header> -->
+        <div class="rank-heading dis-col-center">
+            <h1 id="rankDisplay"></h1>
+            <h2 id="rankScore"></h2>
+            <!-- <p class="grey-text">Supporting Text</p> -->
+        </div>
+        <div class="rank-holders">
+            <div class="second dis-col-center">
+                <h2 class="rank-number">#2</h2>
+                <div class="profile-pic dis-col-center" id="profile-second">
+                    <!-- <img alt="User 2"> --> <span id="top2Name" class="topernames"></span>
+                </div>
+                <div class="rank dis-col-even" id="second">
+                    <div class="dis-col-center">
+                    <h2 class="score">Score</h2>
+                    <h4 id="top2Score" class="topScores"></h4>
+                </div>
+            </div>
+        </div>
+        <div class="first dis-col-center">
+            <h2 class="rank-number"></h2>
+            <img src="assest/crown.png" alt="crown">
+            <div class="profile-pic dis-col-center" id="profile-first">
+                <!-- <img alt="User 1">  --> <span id="top1Name" class="topernames">1</span>
+            </div>
+            <div class="rank dis-col-even" id="first">
+                <div class="dis-col-center">
+                <h2 class="score">Score</h2>
+                <h4 id="top1Score" class="topScores"></h4>
+            </div>
+        </div>
+        </div>
+    
+        <div class="third dis-col-center">
+            <h2 class="rank-number">#3</h2>
+            <div class="profile-pic dis-col-center" id="profile-third">
+                <!-- <img alt="User 3"> --> <span id="top3Name" class="topernames"></span>
+            </div>
+    
+            <div class="rank dis-col-even" id="third">
+                <div class="dis-col-center">
+                    <h2 class="score">Score</h2>
+                    <h4 id="top3Score" class="topScores"></h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="rank-list">
+            <img src="assest/Vector 15.png" alt="">
+            <div class="ranking font-heavy">
+                <div class="rank-item dis-row-between" id="currentscore">
+                   <div class=" dis-row-even" id="ExtraRank">
+                       <p id="currentUserRank"></p> <span id="currentUserName" class="topernames"></span>
+                   </div> 
+                    <p id="currentUserScore" class="topScores"></p>
+                </div>
+                <div class="rank-item dis-row-between">
+                    <p>#6 <span id="top6Name" class="topernames"></span></p>
+                    <p id="top6Score" class="topScores"></p>
+                </div>
+                <div class="rank-item dis-row-between">
+                    <p>#5 <span id="top5Name" class="topernames"></span> </p>
+                    <p id="top5Score" class="topScores"></p>
+                </div>
+                <div class="rank-item dis-row-between">
+                    <p >#4 <span id="top4Name" class="topernames"></span></p>
+                    <p id="top4Score" class="topScores"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <script src="script.js"></script>
+<script>rankDisplay(); showLeaderboard();</script>
 </body>
-
 </html>

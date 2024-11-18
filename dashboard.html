@@ -15,16 +15,23 @@
 
 <body>
     <section class="dashboard">
-        <nav class="navbar">
-            <div class="fs-div">
+        <nav class="quiz-start-nav dis-row-between">
+            <div>
                 <img src="assest/techpathshala.png" alt="" class="main-img">
             </div>
-            <div class="sc-div">
-                <a href="#">Home</a>
-                <div id="userNameDisplay"></div>
-                <div id="">logout</div>
-                
+            <div class="user-info">
+                <span id="userName" class="user-name"></span>
+                <img class="Avatar" src="assest/Avatar.png" alt="" onclick="confirmLogout()">
+              <br>
+             <div id="confirmLogoutOptionDiv">
+                <div class="confirm dis-col-center">
+                    <span id="userNameDisplay"></span>
+                    <span id="userEmailDisplay"></span>
+                    <button class="logout-button btn-primary" onclick="logout()">Logout</button> 
+                    <button class="edit-button btn-primary" onclick="editPic()">Edit</button>
+                </div>
             </div>
+        </div>
 
         </nav>
         <main class="main-board">
@@ -46,6 +53,7 @@
             </div>
         </main>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>
