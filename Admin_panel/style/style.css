@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-family: "Inter", serif;
@@ -7,27 +7,27 @@ body {
 header {
     width: 100%;
     background-color: #EEEEEE;
-}
+} */
 
-.navbar {
+/* .navbar {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.navbar .left-div {
+/* .navbar .left-div { */
     /* width: 50%; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 1rem;
 
-}
+} */
 
-.navbar .right-div {
+/* .navbar .right-div { */
     /* width: 50%; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     padding-right: 1rem;
@@ -45,29 +45,29 @@ header {
 .navbar .right-div .user {
     width: 2rem;
     height: 2rem;
-}
+} */
 
 /* header end */
 
 /* main start */
-main {
+/* main {
     width: 100%;
     height: 93vh;
     display: flex;
     justify-content: center;
-}
+} */
 
-main .left-div {
+/* main .left-div {
     width: 20%;
     background-color: white;
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: left; */
     /* justify-content: center; */
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     /* padding: 1rem; */
-}
+/* }
 
 main .right-div {
     width: 80%;
@@ -80,30 +80,30 @@ main .right-div p {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-}
+} */
 
-main .left-div li {
+/* main .left-div li {
     padding: 1rem;
 }
 
 main .left-div p{
     font-size: 1.5rem;
-}
+} */
 
-main .left-div .home,
+/* main .left-div .home,
 .user,
 .question {
     width: 1rem;
-    height: 1rem;
+    height: 1rem; */
     /* margin-top: 2rem; */
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
 
-}
+/* } */
 /* index main ends */
 
 /* quiz main start */
 
-.quiz-right-div{
+/* .quiz-right-div{
     width: 80%;
     background-color:lavender;
     padding: 1rem;
@@ -148,3 +148,398 @@ font-weight: 500;
     top: 72px;
     margin: 0 auto;
 }
+
+
+#alertBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  #questionList {
+    margin-top: 20px;
+  } */
+  /* button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #0056b3;
+  } */
+  /* select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+  } */
+
+/* ##########userlist### */
+
+/* admin panel start*/
+/******************************************************* admin home page starts...**************************************************/
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  
+   
+  }
+  
+  .main-div {
+    background-color: #E2F1E7;
+    overflow: auto;
+    min-height: 100vh;
+  }
+  
+  button{
+    cursor: pointer;
+  }
+  
+  .left-part {
+    width: 20%;
+    padding: 30px;
+    border-right: 2px solid #E8BE21;
+    border-radius: 5px;
+  }
+  
+  .left-part h2,
+  .right-part h1 {
+    color: black;
+  }
+  
+  #menu a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  #menu a.active {
+    color: blue;
+  }
+  
+  
+  .left-part .item {
+    margin: 10px;
+  }
+  
+  .right-part {
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: hidden;
+  }
+  
+  #confirmLogoutOptionDiv {
+    display: none;
+    border-radius: 10px;
+    background-color:yellowgreen;
+    height: 170px;
+    width: 270px;
+    position: absolute;
+    top: 72px;
+    right: 50px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  /* hamburger menu */
+  
+  .burger-activate .left-part {
+    display: none;
+  }
+  
+  .burger-activate .right-part {
+    width: 100%;
+  }
+  
+  
+  .burger-deactivate .left-part {
+    display: block;
+  }
+  
+  .burger-deactivate .right-part {
+    width: 70%;
+  }
+  
+  .logo {
+    gap: 4rem;
+  }
+  
+  .burger-menu i{
+    cursor: pointer;
+    font-size: large;
+  }
+  
+  /********************************************** quizzes page starts ****************************************************/
+  .right-part h2 {
+    padding: 8px;
+    border-bottom: 2px solid grey;
+  }
+  
+  .right-part .btn-primary {
+    width: 250px;
+    margin: 20px 20px 20px 600px;
+  }
+  
+  .right-part .quiz-table,
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: black 2px solid;
+  }
+  
+  thead>tr,
+  th,
+  tbody>tr,
+  td {
+    border: black 2px solid;
+    padding: 5px;
+  }
+  
+  .fa-eye {
+    color: blue;
+  }
+  
+  .fa-pencil {
+    color: green;
+  }
+  
+  .fa-trash {
+    color: red;
+  }
+  
+  td>i {
+    margin: 3px 0;
+    padding: 0px 10px 0px 10px;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .icon-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  /********************************************************** add Question form start ******************************************/
+  .addQues {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-popup {
+    /* height: 100vh; */
+    width: 500px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    top: 15px;
+    right: 150px;
+    border: 3px solid #f1f1f1;
+    z-index: 1;
+  }
+  
+  .form-container {
+    width: 500px;
+    gap:1rem;
+    padding: 15px;
+    background-color: white;
+  }
+  
+  .red-text {
+    color: red;
+  }
+  
+  .form-container input[type=text],
+  select {
+    width: 450px;
+    padding: 15px;
+    font-size: large;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .form-container .btn-primary {
+    background-color: #E8BE21;
+    color: white;
+    width: 30%;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  .form-container .cancel {
+    background-color: white;
+    border: none;
+    margin-right: 5px;
+  }
+  
+  .form-container .btn-primary:hover,
+  .open-button:hover {
+    opacity: 1;
+  }
+  
+  .viewMcq {
+    display: none;
+    gap: 1rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 0 auto;
+    width: 90%;
+    height: 250px;
+    width: 500px;
+    background-color: #f1f1f1;
+    /* border: 1px solid #ddd; */
+    position: relative;
+    top: -650px;
+  }
+  
+  .viewMcq button {
+    border: none;
+    background-color: #ffe8ad;
+    font-weight: 500;
+    font-size: larger;
+  }
+  
+  .viewMcq p,ul{
+    margin: 5px;
+  }
+  
+  /* userTable part */
+  .blur {
+    filter: blur(5px);
+    transition: filter 0.1s;
+    pointer-events: none; 
+  }
+  
+  #user-table a {
+    cursor: pointer;
+    color: blue;
+  }
+  
+  .user-table {
+    text-align: center;
+  }
+  
+  .userHeading {
+    margin: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  /* user history part */
+  #testDetailsDiv,
+  #testDetails {
+    width: 500px;
+    height: auto;
+    padding: 30px;
+    position: absolute;
+    top: 100px;
+    margin: 0 auto;
+    background-color: #f3c44d;
+    border-radius: 10px;
+  }
+  
+  #testDetailsDiv button,
+  #testDetails button {
+    border: none;
+    font-weight: 500;
+    font-size: larger;
+    background-color: #ffe8ad;
+  }
+  
+  #testDetailsDiv a {
+    color: blue;
+    cursor: pointer;
+  }
+  
+  /* user individual test part */
+  #testDetails {
+    width:700px;
+    top: 100px;
+    background-color:antiquewhite;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  #testDetails button {
+    background-color: #f1e1a6;
+    margin-right: 10px;
+  }
+  
+  #testDetails>.userHeading{
+    padding: 5px;
+    background-color: #f1e1a6;
+    width: 100%;
+  }
+  
+  #testDetails #userNameHeading{
+  margin-bottom: 10px;
+  }
+  
+  .question-detail {
+    margin-bottom: 20px; 
+    padding-bottom: 10px;
+  }
+  
+  .question-detail h4{
+    margin-bottom: 5px;
+  }
+  
+  .options-list {
+    list-style-type:disc; 
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+  
+  .options-list li {
+    margin-bottom: 10px; 
+  }
+  
+  @media (max-width: 768px) {
+    #testDetails {
+      width: 90%;
+      padding: 20px;
+    }
+    #testDetailsDiv {
+      width: 90%;
+      padding: 20px;
+    }
+  }

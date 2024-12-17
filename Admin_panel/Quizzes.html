@@ -4,84 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz-Main</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="/Quiz_app/Quiz_app/Quiz_App/assest/style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-
-
 </head>
 
-<body>
+<body class="burger-deactivate">
+
     <header>
-        <nav class="navbar">
-            <div class="left-div">
-                <div class="logo-one">
-                    <img src="assest/techpathshala.png" alt="techpathshala">
+        <nav class="quiz-start-nav dis-row-between">
+            <div class="logo dis-row-around">
+                <div class="burger-menu dis-col-center" id="burger-menu" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
                 </div>
-                <div class="logo-2">
-                    <i class="fa-solid fa-bars" class="menu-burger"></i>
+                <a href="https://techpaathshala.com/">
+                    <img src="assest/techpathshala.png" alt="logo">
+                </a>
                 </div>
-            </div>
-            <div class="right-div">
-                <div>
-                    <li>Admin</li>
-                </div>
-                <div>
-                    <img src="assest/profile-user.png" alt="" class="user" onclick="AdminconfirmLogout()">
-                </div>
+            
+            <div class="user-info">
+                <span id="userName" class="user-name">Admin</span>
+                <img id="AvatarPic" class="Avatar" src="assest/Avatar.png" alt="Avatar" onclick="confirmLog()">
+                <br>
                 <div id="confirmLogoutOptionDiv">
                     <div class="confirm dis-col-center">
-                        <span id="userNameDisplay"></span>
+                        <span id="userNameDisplay">Admin</span>
                         <span id="userEmailDisplay"></span>
-                        <button class="logout-button btn-primary" onclick="Adminlogout()">Logout</button>
-                        <button class="edit-button btn-primary" onclick="AdmineditPic()"> Edit </button>
+                        <button class="logout-button btn-primary" onclick="logoutAdmin()">Logout</button>
+                        <button class="edit-button btn-primary" onclick="editPic()"> Edit </button>
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;"
+                            onchange="previewImage(event)">
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-
     <main>
-        <div class="left-div">
-            <p>M E N U</p>
-            <li><img src="assest/home.png" alt="" class="home">Home</li>
-            <li><img src="assest/user.png" alt="" class="user">Users</li>
-            <li><img src="assest/question.png" alt="" class="question">Quizzes</li>
-        </div>
-        <div class="quiz-right-div">
-            <div class="heading">
-                <p>MCQ Questions Lists</p>
-                <hr>
+        <div class="main-div dis-row-between">
+            <div class="left-part">
+                <h2>Menu</h2>
+                <ul id="menu">
+                    <li class="item">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="item">
+                        <i class="fa-regular fa-user"></i>
+                        <a href="users.html">Users</a>
+                    </li>
+                    <li class="item">
+                        <i class="fa-regular fa-circle-question"></i>
+                        <a href="Quizzes.html">Quizzes</a>
+                    </li>
+                </ul>
             </div>
-            <div class="div-btn">
-                <button class="btn">Add New Question</button>
-            </div> <br>
-            <section>
-                <table id="questionsTable" border="1">
+            <div class="right-part dis-row-center" id="right-part-div">
+                <div>
+                <h2>MCQ Question Lists</h2>
+                <button class="btn-primary open-button" onclick="openForm()">Add New Questions</button>
+
+                <table class="quiz-table" id="question-table-main">
                     <thead>
                         <tr>
-                            <th>Sr No</th>
+                            <th>Sr.No.</th>
                             <th>Questions</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="questionsTableBody"></tbody>
+                    <tbody id="question-table">
+                        <!-- Table content -->
+                    </tbody>
                 </table>
-            </section>
+            </div>
         </div>
     </main>
-    <!-- <script src="/Quiz_app/Quiz_app/Quiz_App/Admin_panel/admin_js/admin_script.js"></script> -->
+
+    <div class="form-popup" id="addQuesForm">
+        <form class="form-container" onsubmit="addQuestion(event)">
+            <div class="dis-row-between">
+                <h2>Create Question</h2>
+                <button type="button" class="btn cancel" onclick="closeForm()"> X </button>
+            </div>
+            <br>
+            <div class="addQues">
+                <label for="question"><b>Question</b> <span class="red-text">*</span></label>
+                <input type="text" name="question" id="question" required>
+
+                <label for="Option1"><b>Option 1</b> <span class="red-text">*</span></label>
+                <input type="text" name="Option1" id="Option1" required>
+
+                <label for="Option2"><b>Option 2</b> <span class="red-text">*</span></label>
+                <input type="text" name="Option2" id="Option2" required>
+
+                <label for="Option3"><b>Option 3</b> <span class="red-text">*</span></label>
+                <input type="text" name="Option3" id="Option3" required>
+
+                <label for="Option4"><b>Option 4</b> <span class="red-text">*</span></label>
+                <input type="text" name="Option4" id="Option4" required>
+
+                <label for="correctOption"><b>correct Option</b> <span class="red-text">*</span></label>
+                <select type="text" name="correctOption" id="correctOption" required>
+                    <option value="Option 1" id="selectOption1"></option>
+                    <option value="Option 2" id="selectOption2"></option>
+                    <option value="Option 3" id="selectOption3"></option>
+                    <option value="Option 4" id="selectOption4"></option>
+                </select>
+
+                <button type="submit" class="btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="viewMcq">
+
+    </div>
+
     <script src="/Quiz_app/Quiz_app/Quiz_App/Admin_panel/admin_js/panel_script.js"></script>
     <script src="/Quiz_app/Quiz_app/Quiz_App/script.js"></script>
+    <!-- <script> window.onload = questiontable(quizQuestions)</script> -->
 </body>
 
 </html>
